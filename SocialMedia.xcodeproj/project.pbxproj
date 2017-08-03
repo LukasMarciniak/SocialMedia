@@ -12,8 +12,9 @@
 		49F0B4261F33521400B7967A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F0B4241F33521400B7967A /* Main.storyboard */; };
 		49F0B4281F33521400B7967A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F0B4271F33521400B7967A /* Assets.xcassets */; };
 		49F0B42B1F33521400B7967A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F0B4291F33521400B7967A /* LaunchScreen.storyboard */; };
-		49F0B4331F33525D00B7967A /* GoogleService-Info-5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49F0B4321F33525D00B7967A /* GoogleService-Info-5.plist */; };
+		49F0B4331F33525D00B7967A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49F0B4321F33525D00B7967A /* GoogleService-Info.plist */; };
 		49F0B4381F335F6300B7967A /* Sweet Sensations Personal Use.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49F0B4371F335F6300B7967A /* Sweet Sensations Personal Use.ttf */; };
+		49F0B4401F33835700B7967A /* ButtonCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0B43F1F33835700B7967A /* ButtonCorner.swift */; };
 		A5B5474C5E5F8FAB045338CB /* Pods_SocialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFEB1AD181B521C6D5FC626 /* Pods_SocialMedia.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,8 +26,9 @@
 		49F0B4271F33521400B7967A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49F0B42A1F33521400B7967A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49F0B42C1F33521400B7967A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49F0B4321F33525D00B7967A /* GoogleService-Info-5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-5.plist"; sourceTree = "<group>"; };
+		49F0B4321F33525D00B7967A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49F0B4371F335F6300B7967A /* Sweet Sensations Personal Use.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sweet Sensations Personal Use.ttf"; sourceTree = "<group>"; };
+		49F0B43F1F33835700B7967A /* ButtonCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCorner.swift; sourceTree = "<group>"; };
 		8DFEB1AD181B521C6D5FC626 /* Pods_SocialMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B492C6EF65521485F939F6E2 /* Pods-SocialMedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialMedia/Pods-SocialMedia.release.xcconfig"; sourceTree = "<group>"; };
 		D820C5997BD7EAFF0764CB25 /* Pods-SocialMedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialMedia/Pods-SocialMedia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		49F0B41F1F33521400B7967A /* SocialMedia */ = {
 			isa = PBXGroup;
 			children = (
+				49F0B43B1F33800600B7967A /* Util */,
 				49F0B4361F3352E300B7967A /* Model */,
 				49F0B4351F3352E000B7967A /* View */,
 				49F0B4341F3352DC00B7967A /* Controller */,
@@ -73,7 +76,7 @@
 				49F0B4271F33521400B7967A /* Assets.xcassets */,
 				49F0B4291F33521400B7967A /* LaunchScreen.storyboard */,
 				49F0B42C1F33521400B7967A /* Info.plist */,
-				49F0B4321F33525D00B7967A /* GoogleService-Info-5.plist */,
+				49F0B4321F33525D00B7967A /* GoogleService-Info.plist */,
 				49F0B4371F335F6300B7967A /* Sweet Sensations Personal Use.ttf */,
 			);
 			path = SocialMedia;
@@ -90,6 +93,7 @@
 		49F0B4351F3352E000B7967A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49F0B43F1F33835700B7967A /* ButtonCorner.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -99,6 +103,13 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		49F0B43B1F33800600B7967A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		7DFCBED2D6309D48BE097376 /* Pods */ = {
@@ -181,7 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F0B42B1F33521400B7967A /* LaunchScreen.storyboard in Resources */,
-				49F0B4331F33525D00B7967A /* GoogleService-Info-5.plist in Resources */,
+				49F0B4331F33525D00B7967A /* GoogleService-Info.plist in Resources */,
 				49F0B4381F335F6300B7967A /* Sweet Sensations Personal Use.ttf in Resources */,
 				49F0B4281F33521400B7967A /* Assets.xcassets in Resources */,
 				49F0B4261F33521400B7967A /* Main.storyboard in Resources */,
@@ -245,6 +256,7 @@
 			files = (
 				49F0B4231F33521400B7967A /* SignVC.swift in Sources */,
 				49F0B4211F33521400B7967A /* AppDelegate.swift in Sources */,
+				49F0B4401F33835700B7967A /* ButtonCorner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
