@@ -12,6 +12,8 @@ import FBSDKCoreKit
 import Firebase
 
 class SignVC: UIViewController {
+    @IBOutlet weak var emailbox: UITextField!
+    @IBOutlet weak var pwdbox: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,30 @@ class SignVC: UIViewController {
             }
         }
     }
-
-
+    
+    @IBAction func EPbtn(_ sender: Any) {
+        if let email = emailbox.text, let pwd = pwdbox.text {
+            Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, err) in
+                if err == nil {
+                    print("Email used")
+                }else {
+                    Auth.auth().createUser(withEmail: email, password: pwd, completion: { (user, err) in
+                        if err != nil {
+                            print("Unable")
+                    
+                        } else {
+                            print("Success")
+                        }
+                
+            })
+        }
+        
+    })
+        }
+    }
 }
+
+
+
+
 
