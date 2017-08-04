@@ -7,5 +7,10 @@ target 'SocialMedia' do
 
   # Pods for SocialMedia
 pod 'Firebase/Core'
+pod 'FBSDKLoginKit'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'Firebase/Storage'
+
 
 end

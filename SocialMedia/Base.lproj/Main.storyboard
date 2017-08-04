@@ -65,6 +65,9 @@
                                             <constraint firstAttribute="width" constant="120" id="i7e-ZM-kIJ"/>
                                         </constraints>
                                         <state key="normal" image="f"/>
+                                        <connections>
+                                            <action selector="FBLog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5tO-KD-OeX"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T7O-vg-7bG">
                                         <rect key="frame" x="0.0" y="170" width="233" height="130"/>
