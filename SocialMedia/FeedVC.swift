@@ -14,6 +14,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var FeedTable: UITableView!
     
+    var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,21 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         DataService.ds.REF_POSTS.observe(.value, with: {(snapshot) in
           
+            self.posts = []
             
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    print("Snap: \(snap)")
+                    
+                    if let postDict = snap.value as? Dictionary <String, Any> {
+                        let key = snap.key
+                        let post = Post(postID: key, postData: postDict)
+                        self.posts.append(post)
+                    }
+                }
+            }
+            
+            self.FeedTable.reloadData()
             
         })
         
