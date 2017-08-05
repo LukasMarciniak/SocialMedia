@@ -22,15 +22,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         FeedTable.dataSource = self
         FeedTable.delegate = self
         
-        DataService.ds.REF_POSTS.observe(.value, with: {(snapshot) in
-          
-            self.posts = []
-            
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
-                    print("Snap: \(snap)")
-                    
-                    if let postDict = snap.value as? Dictionary <String, Any> {
+                    print("snap: \(snap)")
+                    if let postDict = snap.value as? Dictionary <String, AnyObject> {
                         let key = snap.key
                         let post = Post(postID: key, postData: postDict)
                         self.posts.append(post)
@@ -50,13 +46,20 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return FeedTable.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
-    }
     
+        let post = posts[indexPath.row]
+        
+        if let cell = FeedTable.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
+            cell.configureCell(post: post)
+            return cell
+        }else {
+            return PostCell()
+        }
+    }
     
 
     @IBAction func outbtn(_ sender: Any) {

@@ -18,11 +18,11 @@ class DataService  {
     private var _REF_POSTS = DB_BASE.child("posts")
     private var _REF_USERS = DB_BASE.child("users")
     
-    var REF_POSTS: DatabaseReference {
+    var REF_BASE: DatabaseReference {
         return _REF_BASE
     }
     
-    var REF_BASE: DatabaseReference {
+    var REF_POSTS: DatabaseReference {
         return _REF_POSTS
     }
     
