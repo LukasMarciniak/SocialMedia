@@ -21,6 +21,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         FeedTable.dataSource = self
         FeedTable.delegate = self
         
+        DataService.ds.REF_POSTS.observe(.value, with: {(snapshot) in
+          
+            
+            
+        })
+        
         // Do any additional setup after loading the view.
     }
     
