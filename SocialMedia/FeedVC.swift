@@ -10,15 +10,21 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var FeedTable: UITableView!
+    @IBOutlet weak var imageAdd: UIImageView!
     
     var posts = [Post]()
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        
         FeedTable.dataSource = self
         FeedTable.delegate = self
         
@@ -61,7 +67,22 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imageAdd.image = image
+        } else {
+            print("A void image wasn't selection")
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
 
+    @IBAction func addImgTapped(_ sender: Any) {
+        present(imagePicker, animated:  true, completion: nil)
+    }
+    
+    
     @IBAction func outbtn(_ sender: Any) {
         if (self.presentingViewController != nil) {
             self.dismiss(animated: false, completion: nil)
