@@ -14,11 +14,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 
     @IBOutlet weak var FeedTable: UITableView!
     @IBOutlet weak var imageAdd: UIImageView!
+    @IBOutlet weak var PostTextField: UITextField!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache <NSString, UIImage> = NSCache()
-   
+    var imageSelected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -77,6 +79,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imageSelected = true
             imageAdd.image = image
         } else {
             print("A void image wasn't selection")
@@ -96,6 +99,41 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         }
         let _ = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         try! Auth.auth().signOut()
+    }
+    
+    
+    @IBAction func postAddTapped(_ sender: Any) {
+        
+        guard let caption = PostTextField.text, caption != "" else {
+            print("caption must be entered")
+            return
+        }
+        
+        guard let img = imageAdd.image, imageSelected == true else {
+            print("IMage must be selected")
+            return
+        }
+        
+        if let imageData = UIImageJPEGRepresentation(img, 0.2) {
+            
+            let imgUid = NSUUID().uuidString
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGE.child(imgUid).putData(imageData, metadata: metadata) { (metadata, error) in
+            
+                if error != nil {
+                    print("Unable upload")
+                } else {
+                    print("Uploada success")
+                    
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                }
+                
+            
+            }
+        }
+        
     }
    
 }

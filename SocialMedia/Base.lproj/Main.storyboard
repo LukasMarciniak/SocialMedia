@@ -219,6 +219,9 @@
                                             <constraint firstAttribute="width" constant="55" id="M2p-Rh-Jwb"/>
                                         </constraints>
                                         <state key="normal" image="add-post"/>
+                                        <connections>
+                                            <action selector="postAddTapped:" destination="EWL-Fl-g8t" eventType="touchUpInside" id="kLw-N5-Whe"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ejk-jS-4Kf">
                                         <rect key="frame" x="71" y="15" width="201" height="30"/>
@@ -370,6 +373,7 @@
                     </view>
                     <connections>
                         <outlet property="FeedTable" destination="bEe-fP-gxm" id="6xw-dV-Qov"/>
+                        <outlet property="PostTextField" destination="ejk-jS-4Kf" id="dCz-ZK-qkz"/>
                         <outlet property="imageAdd" destination="Mu8-b2-psn" id="9tm-eU-9Kh"/>
                     </connections>
                 </viewController>
