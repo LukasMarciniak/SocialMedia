@@ -52,7 +52,7 @@
                   moduleName = "SocialMedia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LukaszM./Desktop/SocialMedia/SocialMedia/Post.swift"
-                  timestampString = "523720509.682908"
+                  timestampString = "523732471.186694"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -67,7 +67,7 @@
                   moduleName = "SocialMedia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LukaszM./Desktop/SocialMedia/SocialMedia/Post.swift"
-                  timestampString = "523720509.686437"
+                  timestampString = "523732471.189821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -83,13 +83,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocialMedia/PostCell.swift"
-            timestampString = "523715376.746477"
+            filePath = "SocialMedia/FeedVC.swift"
+            timestampString = "523731981.803415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "configureCell(post:img:)"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "postToFirebase(imageURL:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialMedia/FeedVC.swift"
+            timestampString = "523731981.803415"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "postToFirebase(imageURL:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialMedia/FeedVC.swift"
+            timestampString = "523731981.803415"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "postToFirebase(imageURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -350,6 +350,7 @@
                                             <outlet property="PostTxt" destination="yn1-oH-eyP" id="7UH-UX-9fg"/>
                                             <outlet property="ProfileImg" destination="vkV-IR-NjE" id="qzR-d6-Znd"/>
                                             <outlet property="constatnsLbl" destination="I5O-27-f3e" id="fO8-H6-RQU"/>
+                                            <outlet property="likeImg" destination="EMB-xM-Iks" id="vcL-O6-ImQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

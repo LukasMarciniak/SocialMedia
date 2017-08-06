@@ -20,6 +20,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache <NSString, UIImage> = NSCache()
     var imageSelected = false
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,16 +63,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
         let post = posts[indexPath.row]
         
-        if let cell = FeedTable.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
             if let img = FeedVC.imageCache.object(forKey: post.imageURL as NSString) {
                 cell.configureCell(post: post, img: img)
-                return cell
+            } else {
+                cell.configureCell(post: post)
             }
-            
-            cell.configureCell(post: post)
             return cell
-        }else {
+        } else {
             return PostCell()
         }
     }
@@ -86,6 +86,25 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         }
         
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func postToFirebase(imageURL: String) {
+        let post: Dictionary<String, AnyObject> = [
+        
+            "caption": PostTextField.text as AnyObject,
+            "imageURL": imageURL as AnyObject,
+            "likes": 0 as AnyObject
+        
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        PostTextField.text = ""
+        imageSelected = false
+        imageAdd.image = UIImage(named: "add-image")
+        
+        FeedTable.reloadData()
     }
 
     @IBAction func addImgTapped(_ sender: Any) {
@@ -128,6 +147,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     print("Uploada success")
                     
                     let downloadURL = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadURL {
+                        self.postToFirebase(imageURL: url)
+                    }
                 }
                 
             
