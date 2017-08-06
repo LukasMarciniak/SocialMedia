@@ -52,7 +52,7 @@
                   moduleName = "SocialMedia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LukaszM./Desktop/SocialMedia/SocialMedia/Post.swift"
-                  timestampString = "523711561.805826"
+                  timestampString = "523717895.616064"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -67,7 +67,7 @@
                   moduleName = "SocialMedia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LukaszM./Desktop/SocialMedia/SocialMedia/Post.swift"
-                  timestampString = "523711561.809279"
+                  timestampString = "523717895.620989"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -75,6 +75,22 @@
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialMedia/PostCell.swift"
+            timestampString = "523715376.746477"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "configureCell(post:img:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
